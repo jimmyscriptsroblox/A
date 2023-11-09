@@ -1,0 +1,222 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Jimmy universal Hub V0.1", "BloodTheme")
+
+--New Tab
+
+local Tab = Window:NewTab("Jimmy scripts")
+local Section = Tab:NewSection("YouTube Account: Jimmy Scripts (@JimmyScriptsLol)")
+
+
+Section:NewButton("Float Tool - Universal", "Makes a tool that makes tou float", function()
+    
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Float"
+
+local function unfloatCharacter(character)
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        local bodyVelocity = humanoidRootPart:FindFirstChild("BodyVelocity")
+        if bodyVelocity then
+            bodyVelocity:Destroy()
+        end
+    end
+end
+
+local function flingCharacter(character)
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        local bodyVelocity = humanoidRootPart:FindFirstChild("BodyVelocity")
+        if not bodyVelocity then
+            bodyVelocity = Instance.new("BodyVelocity")
+            bodyVelocity.Velocity = Vector3.new(0, 7, 0) -- Adjust the values as needed
+            bodyVelocity.MaxForce = Vector3.new(0, math.huge, 0)
+            bodyVelocity.Parent = humanoidRootPart
+        else
+            bodyVelocity.Velocity = Vector3.new(0, 7, 0) -- Adjust the values as needed
+        end
+    end
+end
+
+tool.Activated:Connect(function()
+    if tool.Name == "Float" then
+        tool.RequiresHandle = false -- Allow multiple uses without needing to re-equip the tool
+        tool.Name = "Unfloat"
+        
+        local character = game.Players.LocalPlayer.Character
+        if character then
+            while tool.Name == "Unfloat" do
+                flingCharacter(character)
+                wait()
+            end
+        end
+    else
+        tool.RequiresHandle = true -- Set back to true to prevent continuous activation
+        tool.Name = "Float"
+        
+        local character = game.Players.LocalPlayer.Character
+        if character then
+            unfloatCharacter(character)
+        end
+    end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+
+Section:NewButton("Run Tool - Universal", "Makes a tool that makes tou run", function()
+    
+local message = Instance.new("Message")
+message.Text = "Sub to Jimmy Script, made by Jimmy Script"
+message.Parent = game.Workspace
+
+wait(3)  -- Wait for 3 seconds
+
+message:Remove()
+
+
+-- Create the "Run" tool
+local runTool = Instance.new("Tool")
+runTool.Name = "Run"
+runTool.RequiresHandle = false
+
+-- Function to handle tool activation
+local isRunning = false
+
+local function toggleRun()
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character:FindFirstChild("Humanoid")
+
+    if isRunning then
+        humanoid.WalkSpeed = 16 -- Set the normal walk speed
+        runTool.Name = "Run" -- Change the tool name back to "Run"
+    else
+        humanoid.WalkSpeed = 50 -- Set the running speed
+        runTool.Name = "Walk" -- Change the tool name to "Walk"
+    end
+
+    isRunning = not isRunning
+end
+
+runTool.Activated:Connect(toggleRun)
+
+runTool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Section:NewSlider("Walkspeed", "SliderInfo", 1000, 0, function(s) -- 1000 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+--New tab 
+
+local Tab = Window:NewTab("Others script")
+local Section = Tab:NewSection("Scripts")
+
+Section:NewToggle("Infinite Jump", "By toggling this you can jump infinitely.", function(state)    ---put your script to enabled true
+    if state then                                                                                                                                              ---should be the same script
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+        print("Infinite Jump: ON")
+    else
+        InfiniteJumpEnabled = false                                                                                                            ---Put your script  disabled false
+        game:GetService("UserInputService").JumpRequest:connect(function()         
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+        print("Infinite Jump: OFF")
+    end
+end)
+
+Section:NewButton("Fling gui - Universal", "Makes a GUI that makes you Fling players by touching them, Only Works on collision on games", function()
+    
+loadstring(game:HttpGet(('https://pastebin.com/raw/MTNaEb5F'),true))()
+end)
+
+Section:NewButton("Icehub - Universal", "Makes a a Universal Gui by ice", function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Ice-Hub-6414"))()
+end)
+
+Section:NewButton("Nameless Admin - Universal", "Nameless admin", function()
+    
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Nameless-Admin-9113"))()
+end)
+
+Section:NewButton("REDz Hub - Brookhaven", "Its a Brookhaven HUB", function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Brookhaven-RP-REDz-HUB-6559"))()
+end)
+
+Section:NewButton("Juanko universal hub - Universal", "Mande by Juanko Mods YT", function()
+    
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Juanko-Universal-HUB-8525"))()
+end)
+
+Section:NewButton("Mango Hub - Blox fruits", "Blox Fruits", function()
+    
+loadstring(game:HttpGet("https://scriptblox.com/raw/UPDATE-16-Blox-Fruits-Mango-Hub-6540"))()
+end)
+
+Section:NewButton("Mtriet Hub - Blox fruits", "Blox Fruits", function()
+    
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))()
+end)
+
+Section:NewButton("SyniX - Prison life", "Beta SyniX for prison life", function()
+    
+loadstring(game:HttpGet("https://scriptblox.com/raw/Prison-Life-Script-8539"))()
+end)
+
+Section:NewButton("Ez Hub - Universal", "Ez Hub", function()
+    
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Ez-Hub-8750"))()
+end)
+
+Section:NewButton("R15 Gui - Universal", "Free Package Animations Emotes And Dances For Free", function()
+    
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-R15-GUI-(Free-Package-Animations-Emotes-and-Dances)FREE!-1979"))()
+end)
+
+Section:NewButton("Leo Hub - Raise a Floppa 2", "Leo hub for raise a floppa 2", function()
+     
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tip52/Leo-hub/main/loader.lua"))()
+end)
+
+Section:NewButton("Breaking Blitz - Break In 2", "HUB for Break In 2", function()
+    
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RScriptz/RobloxScripts/main/BreakIn2.lua"))()
+end)
+
+Section:NewButton("Slap battles hub that exists - Slap Battles", "Made by Guy that exists", function()
+    
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()
+end)
+
+Section:NewButton("SYSTEM BROKEN - Ragdoll Engine", "Sytem is broken (joke)", function()
+    
+loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
+end)
+
+Section:NewButton("Admin Tools - Prison life", "its a gui that gives you admin tools in prison life", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/AZVi2tuK"))()
+end)
+
+Section:NewTextBox("Set WalkSpeed", "Info", function(txt)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewTextBox("Set JumpPower", "Info", function(txt)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = txt
+end)
+
+Section:NewButton("Reset Walkspeed", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+Section:NewButton("Reset Jumpower", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
