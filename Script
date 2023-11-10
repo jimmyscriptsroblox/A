@@ -191,7 +191,7 @@ Section:NewButton("Breaking Blitz - Break In 2", "HUB for Break In 2", function(
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RScriptz/RobloxScripts/main/BreakIn2.lua"))()
 end)
 
-Section:NewButton("Slap battles hub that exists - Slap Battles", "Made by Guy that exists", function()
+Section:NewButton("Slap battles hub that exists - Slap Battles", "Made by "Guy that exists" (No joke thats his name💀💀💀)", function()
     
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()
 end)
@@ -227,6 +227,11 @@ getgenv().config = getgenv().config or {
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+end)
+
+Section:NewButton("Kat Killer - K.A.T.", "By JN hh gaming", function()
+    
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JNHHGaming/Kat12/main/Kat"))()
 end)
 
 Section:NewTextBox("Set WalkSpeed", "Info", function(txt)
@@ -271,6 +276,11 @@ Section:NewButton("Prison life Leaf hub", "Added in update 0.2", function()
 end)
 
 Section:NewButton("Blade ball Auto block", "Added in update 0.2", function()
+
+
+end)
+
+Section:NewButton("Kat Killer", "Added in update 0.2", function()
 
 
 end)
