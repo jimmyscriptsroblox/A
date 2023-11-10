@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Jimmy universal Hub V0.1", "BloodTheme")
+local Window = Library.CreateLib("Jimmy universal Hub V0.2", "DarkTheme")
 
 --New Tab
 
@@ -205,6 +205,30 @@ Section:NewButton("Admin Tools - Prison life", "its a gui that gives you admin t
     loadstring(game:HttpGet("https://pastebin.com/raw/AZVi2tuK"))()
 end)
 
+Section:NewButton("Toilet tower defense - Toilet Tower Defense", "Key: 7878TolietDefenseTower!!", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/toilet3/main/Tower5"))()
+end)
+
+Section:NewButton("Leaf hub - Prison life", "By Vein", function()
+    
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Mrpopcatfrombupge/Leafhub/main/Person%20life')))()
+end)
+
+Section:NewButton("Auto Block 100% No misses - Blade Ball", "NO MISSES🤑🤑🤑🤑", function()
+
+
+getgenv().config = getgenv().config or {
+    hit_time = 0.3, -- // recommended 0.25 to 0.75 \ --
+
+    mode = 'Always', -- // Hold , Toggle , Always \ --
+    deflect_type = 'Remote', -- // Key Press , Remote \ --
+    notifications = true,
+    keybind = Enum.KeyCode.V
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+end)
+
 Section:NewTextBox("Set WalkSpeed", "Info", function(txt)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
@@ -219,4 +243,34 @@ end)
 
 Section:NewButton("Reset Jumpower", "ButtonInfo", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+--New Tab
+
+local Tab = Window:NewTab("Updates")
+local Section = Tab:NewSection("0.2")
+
+Section:NewButton("Toilet tower defense", "Added in update 0.2", function()
+    
+
+end)
+
+Section:NewButton("Dark theme", "Added in update 0.2", function()
+    
+
+end)
+
+Section:NewButton("Updates tab", "Added in update 0.2", function()
+    
+
+end)
+
+Section:NewButton("Prison life Leaf hub", "Added in update 0.2", function()
+    
+
+end)
+
+Section:NewButton("Blade ball Auto block", "Added in update 0.2", function()
+
+
 end)
