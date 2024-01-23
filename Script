@@ -71,7 +71,7 @@ local message = Instance.new("Message")
 message.Text = "Sub to Jimmy Script, made by Jimmy Script"
 message.Parent = game.Workspace
 
-wait(3)  -- Wait for 3 seconds
+wait(2)  -- Wait for 2 seconds
 
 message:Remove()
 
@@ -111,7 +111,7 @@ end)
 --New tab 
 
 local Tab = Window:NewTab("Others script")
-local Section = Tab:NewSection("Scripts")
+local Section = Tab:NewSection("Scripts made by other people")
 
 Section:NewToggle("Infinite Jump", "By toggling this you can jump infinitely.", function(state)    ---put your script to enabled true
     if state then                                                                                                                                              ---should be the same script
@@ -166,10 +166,14 @@ Section:NewButton("Mtriet Hub - Blox fruits", "Blox Fruits", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))()
 end)
 
-Section:NewButton("SyniX - Prison life", "Beta SyniX for prison life", function()
+Section:NewButton("SyniX - Prison life", "for prison life", function()
     
 loadstring(game:HttpGet("https://scriptblox.com/raw/Prison-Life-Script-8539"))()
 end)
+
+Section:NewButton("Fearless Admin - Prison life", "for prison life", function()
+    
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RiotDevelopment/LuffyExploits/main/Fearless%20Admin"))()
 
 Section:NewButton("Ez Hub - Universal", "Ez Hub", function()
     
